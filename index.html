@@ -1,14 +1,29 @@
 
 <!DOCTYPE html>
 <html>
-<head>
-<body>
-  Hello world
-<script>
-document.body.innerHTML += '<a href="https://sso.mito.org.nz/Login.aspx" style="display: none;" id="link"></a>';
-document.getElementById("link").click();
-</script>
-<body>
+  <head>
+    <title>window.open Example</title>
+
+    <script type="text/javascript" charset="utf-8" src="cordova-2.4.0.js"></script>
+    <script type="text/javascript" charset="utf-8">
+
+    // Wait for Cordova to load
+    //
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+    // Cordova is ready
+    //
+    function onDeviceReady() {
+        // external url
+        var ref = window.open(encodeURI('http://apache.org'), '_blank', 'location=yes');
+        // relative document
+        ref = window.open('next.html', '_self');
+    }
+
+    </script>
+  </head>
+  <body>
+  </body>
 </html>
 
 <!--
